@@ -14,6 +14,7 @@ import (
 )
 
 var changelogFilename string
+var chartDirectory string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -35,7 +36,7 @@ var rootCmd = &cobra.Command{
 			log.Fatalf("Could not determine git root directory. helm-changelog depends largely on git history.")
 		}
 
-		fileList, err := helm.FindCharts(currentDir)
+		fileList, err := helm.FindCharts(currentDir, chartDirectory)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -48,7 +49,7 @@ var rootCmd = &cobra.Command{
 			relativeChartFile := strings.TrimPrefix(chartFileFullPath, currentDir+"/")
 			relativeChartDir := filepath.Dir(relativeChartFile)
 
-			allCommits, err := g.GetAllCommits(fullChartDir)
+			allCommits, err := g.GetAllCommits(fullChartDir, changelogFilename)
 			if err != nil {
 				log.Fatal(err)
 			}
@@ -74,6 +75,7 @@ func Execute() {
 	}
 
 	rootCmd.PersistentFlags().StringVarP(&changelogFilename, "filename", "f", "Changelog.md", "Filename for changelog")
+	rootCmd.PersistentFlags().StringVarP(&chartDirectory, "directory", "d", "./", "Directory containing Chart.yaml file")
 	rootCmd.PersistentFlags().StringVarP(&v, "verbosity", "v", logrus.WarnLevel.String(), "Log level (debug, info, warn, error, fatal, panic)")
 
 	cobra.CheckErr(rootCmd.Execute())

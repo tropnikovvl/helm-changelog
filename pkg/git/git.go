@@ -41,7 +41,7 @@ func (g *Git) GetFileContent(hash, filePath string) (string, error) {
 	return string(out), nil
 }
 
-func (g *Git) GetAllCommits(chartPath string) ([]GitCommit, error) {
+func (g *Git) GetAllCommits(chartPath, changelogFilename string) ([]GitCommit, error) {
 	cmd := exec.Command(
 		"git",
 		"log",
@@ -50,7 +50,7 @@ func (g *Git) GetAllCommits(chartPath string) ([]GitCommit, error) {
 		gitformat,
 		"--",
 		chartPath,
-		":(exclude)"+chartPath+"/Changelog.md",
+		":(exclude)"+chartPath+"/"+changelogFilename,
 	)
 	g.Log.Debugln(cmd)
 
