@@ -8,4 +8,4 @@ repos:
           - --directory=example-charts
 
           # The name of the file that will contain the changes
-          - --filename-files=Changelog.md
+          - --filename=Changelog.md
