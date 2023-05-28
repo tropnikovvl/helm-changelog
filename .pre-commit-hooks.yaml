@@ -1,0 +1,8 @@
+- id: helm-changelog
+  args: []
+  description: Uses 'helm-changelog' to create changelog from the Helm chart's 'Chart.yaml' file, and inserts the result into a corresponding 'Changelog.md' file.
+  entry: git-hook/helm-changelog
+  files: (Changelog\.md|(Chart)\.yaml)$
+  language: script
+  name: Helm Docs
+  require_serial: true

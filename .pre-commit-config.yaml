@@ -1,0 +1,11 @@
+repos:
+  - repo: https://github.com/tropnikovvl/helm-changelog
+    rev: v1.1.0
+    hooks:
+      - id: helm-changelog
+        args:
+          # Make the tool search for charts only under the `example-charts` directory
+          - --directory=example-charts
+
+          # The name of the file that will contain the changes
+          - --filename-files=Changelog.md
