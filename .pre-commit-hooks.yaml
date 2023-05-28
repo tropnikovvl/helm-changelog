@@ -4,5 +4,5 @@
   entry: git-hook/helm-changelog
   files: (Changelog\.md|(Chart)\.yaml)$
   language: script
-  name: Helm Docs
+  name: Helm Changelog
   require_serial: true

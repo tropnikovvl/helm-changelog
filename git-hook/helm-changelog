@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -e
+
+if ! command -v helm-changelog > /dev/null 2>&1; then
+    echo "Please install helm-changelog to run the pre-commit hook! https://github.com/tropnikovvl/helm-changelog#installation"
+    exit 1
+fi
+
+helm-changelog "${@}"
