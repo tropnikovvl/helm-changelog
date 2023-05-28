@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/tropnikovvl/helm-changelog
-    rev: v1.2.0
+    rev: v1.2.1
     hooks:
       - id: helm-changelog
         args:
