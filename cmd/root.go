@@ -76,7 +76,7 @@ func Execute() {
 
 	rootCmd.PersistentFlags().StringVarP(&changelogFilename, "filename", "f", "Changelog.md", "Filename for changelog")
 	rootCmd.PersistentFlags().StringVarP(&chartDirectory, "directory", "d", "./", "Directory containing Chart.yaml file")
-	rootCmd.PersistentFlags().StringVarP(&v, "verbosity", "v", logrus.WarnLevel.String(), "Log level (debug, info, warn, error, fatal, panic)")
+	rootCmd.PersistentFlags().StringVarP(&v, "verbosity", "v", logrus.InfoLevel.String(), "Log level (debug, info, warn, error, fatal, panic)")
 
 	cobra.CheckErr(rootCmd.Execute())
 }
