@@ -4,7 +4,7 @@ import (
 	"io"
 	"time"
 
-	"github.com/mogensen/helm-changelog/pkg/git"
+	"github.com/tropnikovvl/helm-changelog/pkg/git"
 	"gopkg.in/yaml.v3"
 )
 

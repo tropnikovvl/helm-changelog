@@ -1,4 +1,4 @@
-module github.com/mogensen/helm-changelog
+module github.com/tropnikovvl/helm-changelog
 
 go 1.16
 

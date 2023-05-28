@@ -6,15 +6,16 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/mogensen/helm-changelog/pkg/git"
-	"github.com/mogensen/helm-changelog/pkg/helm"
-	"github.com/mogensen/helm-changelog/pkg/output"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
+	"github.com/tropnikovvl/helm-changelog/pkg/git"
+	"github.com/tropnikovvl/helm-changelog/pkg/helm"
+	"github.com/tropnikovvl/helm-changelog/pkg/output"
 )
 
 var changelogFilename string
 var chartDirectory string
+var commitHistory string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -57,7 +58,7 @@ var rootCmd = &cobra.Command{
 			releases := helm.CreateHelmReleases(log, chartFile, relativeChartDir, g, allCommits)
 
 			changeLogFilePath := filepath.Join(fullChartDir, changelogFilename)
-			output.Markdown(log, changeLogFilePath, releases)
+			output.Markdown(log, changeLogFilePath, commitHistory, releases)
 		}
 	},
 }
@@ -76,6 +77,7 @@ func Execute() {
 
 	rootCmd.PersistentFlags().StringVarP(&changelogFilename, "filename", "f", "Changelog.md", "Filename for changelog")
 	rootCmd.PersistentFlags().StringVarP(&chartDirectory, "directory", "d", "./", "Directory containing Chart.yaml file")
+	rootCmd.PersistentFlags().StringVarP(&commitHistory, "commit-history", "c", "true", "Adding commit history to the changelog")
 	rootCmd.PersistentFlags().StringVarP(&v, "verbosity", "v", logrus.WarnLevel.String(), "Log level (debug, info, warn, error, fatal, panic)")
 
 	cobra.CheckErr(rootCmd.Execute())
