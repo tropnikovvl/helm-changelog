@@ -71,8 +71,10 @@ Usage:
   helm-changelog [flags]
 
 Flags:
+  -d, --directory string   Directory containing Chart.yaml file (default "./")
+  -f, --filename string    Filename for changelog (default "Changelog.md")
   -h, --help               help for helm-changelog
-  -v, --verbosity string   Log level (debug, info, warn, error, fatal, panic (default "warning")
+  -v, --verbosity string   Log level (debug, info, warn, error, fatal, panic) (default "info")
 
 # Run helm-changelog creator with default params
 $ ./bin/helm-changelog

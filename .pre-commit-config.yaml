@@ -9,3 +9,5 @@ repos:
 
           # The name of the file that will contain the changes
           - --filename=Changelog.md
+
+          - --verbosity=info
