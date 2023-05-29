@@ -71,8 +71,8 @@ func Markdown(log *logrus.Logger, changeLogFilePath, commitHistory string, relea
 			for _, l := range release.Commits {
 				f.WriteString(fmt.Sprintf("* %s\n", strings.TrimSpace(l.Subject)))
 			}
-			f.WriteString("\n")
 		}
+		f.WriteString("\n")
 
 		if release.ValueDiff != "" {
 			f.WriteString("### Default value changes\n\n")
