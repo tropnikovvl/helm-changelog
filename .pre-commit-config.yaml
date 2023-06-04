@@ -5,10 +5,10 @@ repos:
       - id: helm-changelog
         args:
           # Adding commit history to the changelog (default "true")
-          - --commit-history=false
+          - --commit-history=true
           # Directory containing Chart.yaml file (default "./")
           - --directory=example-charts
           # Filename for changelog (default "Changelog.md")
           - --filename=CHANGELOG.md
           # Log level (debug, info, warn, error, fatal, panic) (default "warn")
-          - --verbosity=info
+          - --verbosity=warn

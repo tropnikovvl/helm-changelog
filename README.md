@@ -81,6 +81,29 @@ Flags:
 $ ./bin/helm-changelog
 ```
 
+### Run with [Pre-commit](https://github.com/pre-commit/pre-commit)
+
+Create .pre-commit-config.yaml file.
+
+```bash
+repos:
+  - repo: https://github.com/tropnikovvl/helm-changelog
+    rev: v1.3.1
+    hooks:
+      - id: helm-changelog
+        args:
+          # Adding commit history to the changelog (default "true")
+          - --commit-history=true
+          # Directory containing Chart.yaml file (default "./")
+          - --directory=example-charts
+          # Filename for changelog (default "Changelog.md")
+          - --filename=CHANGELOG.md
+          # Log level (debug, info, warn, error, fatal, panic) (default "warn")
+          - --verbosity=warn
+
+```
+
+
 ### Run in Docker
 
 The helm-changelog can alternatively be run in docker.
