@@ -1,6 +1,6 @@
 # helm-changelog
 
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Ftropnikovvln%2Fhelm-changelog%2Fbadge%3Fref%3Dmain&style=flat)](https://actions-badge.atrox.dev/tropnikovvl/helm-changelog/goto?ref=main)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Ftropnikovvl%2Fhelm-changelog%2Fbadge%3Fref%3Dmain&style=flat)](https://actions-badge.atrox.dev/tropnikovvl/helm-changelog/goto?ref=main)
 [![Go Report Card](https://goreportcard.com/badge/github.com/tropnikovvl/helm-changelog)](https://goreportcard.com/report/github.com/tropnikovvl/helm-changelog)
 
 Create changelogs for Helm Charts, based on git history.
